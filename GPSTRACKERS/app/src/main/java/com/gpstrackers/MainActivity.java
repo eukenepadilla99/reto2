@@ -90,7 +90,10 @@ public class MainActivity extends Activity implements LocationListener {
                             onLocationChanged(location);
 
                         } else {
-                            Toast.makeText(getBaseContext(), "Location can't be retrieved fusedLocationClient", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),
+                                    "Location can't be retrieved fusedLocationClient",
+                                    Toast.LENGTH_SHORT).show();
+                            Log.d("miFiltro", "location fusedLocationClient " + location);
                             LocationRequest locationRequest = LocationRequest.create();
                             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                             locationRequest.setInterval(20 * 1000);
